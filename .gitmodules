@@ -1,0 +1,3 @@
+[submodule "Externals/TouchOpenGL"]
+	path = Externals/TouchOpenGL
+	url = git://github.com/TouchCode/TouchOpenGL.git

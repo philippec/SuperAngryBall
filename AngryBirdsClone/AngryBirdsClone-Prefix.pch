@@ -11,4 +11,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    
+    #define TODO_BRIDGE __bridge
+    
+    #define CP_ALLOW_PRIVATE_ACCESS 1
 #endif

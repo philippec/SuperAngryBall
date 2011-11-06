@@ -1,35 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="6" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1934" systemVersion="11C73" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="mSM-Dy-x9w">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="931"/>
     </dependencies>
     <scenes>
         <scene sceneID="4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="CViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5" customClass="GLKView">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="ik0-cw-7fV" customClass="CGameView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mad Tigers" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="tTZ-iC-3gZ">
+                                        <rect key="frame" x="20" y="20" width="984" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                        <color key="textColor" red="1" green="0.7012811897125838" blue="0.11247162773788" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.57346576452255249" green="0.069875263899313034" blue="0.044973366432447544" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32156863810000003" green="0.32156863810000003" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rqV-gX-oB9"/>
+                    <connections>
+                        <outlet property="rendererView" destination="ik0-cw-7fV" id="QWy-2P-bgW"/>
+                    </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="1376" y="-161"/>
+        </scene>
+        <scene sceneID="y35-fW-5tT">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fOt-nq-m0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="mSM-Dy-x9w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="r7E-pD-fK7">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="Rat-3g-TUQ"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-283" y="163"/>
         </scene>
     </scenes>
     <classes>
-        <class className="GLKView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLKView.h"/>
+        <class className="CGameView" superclassName="CRendererView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CGameView.h"/>
+        </class>
+        <class className="CRendererView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CRendererView.h"/>
+        </class>
+        <class className="CViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="rendererView" candidateClass="CGameView"/>
             </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
